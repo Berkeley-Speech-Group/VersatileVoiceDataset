@@ -1,0 +1,370 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+	
+	td {
+    	width: 20%; /* Equal width for 5 columns, adjust as needed */
+    	text-align: center; /* Centers content within each cell */
+	}
+
+	.demotable {
+    	width: 100%; /* Full width of the parent */
+    	margin: 0 auto; /* Centers the table */
+	}
+
+	audio {
+    	width: 100%; /* Adjust the width as needed */
+    	max-width: 200px; /* Set a maximum width */
+		margin: 5px auto;
+		display: block;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+<head>
+	<title>Versatile Voice Dataset</title>
+	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Speech After Gender: A Trans-Feminine Perspective on Next Steps for Speech Science and Technology" />
+	<meta property="og:description" content="Presents a new dataset demonstrating speaker flexibility." />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script> 
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px">Speech After Gender: A Trans-Feminine Perspective on Next Steps for Speech Science and Technology</span>
+		
+	</center>
+
+	<!-- <center>
+		<table align=center width=850px>
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:500px" src="./resources/model_figure.png"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+	</center> -->
+
+	<hr>
+
+	<table align=center width=850px>
+		<center><h1>Abstract</h1></center>
+		<tr>
+			<td>
+				As experts in voice modification, trans-feminine gender-affirming voice teachers have unique perspectives on voice that confound current understandings of speaker identity. To demonstrate this, we present the Versatile Voice Dataset (VVD), a collection of three speakers modifying their voices along gendered axes. The VVD illustrates that current approaches in speaker modeling, based on categorical notions of gender and a static understanding of speaker identity, fail to account for the flexibility of the vocal tract. Utilizing publicly-available speaker embeddings, we demonstrate that gender classification systems fail to accurately identify all the voices as belonging to feminine or non-binary speakers, and speaker verification systems fail to identify voices as coming from the same speaker as the vocal modification becomes more drastic. In light of our findings, we encourage the speech community to pursue models that move beyond categorical and static notions of speaker identity.
+			</td>
+		</tr>
+	</table>
+	<br>
+
+
+
+	<table class="demotable" width=850px>
+		<center><h1>Samples</h1></center>
+		<center><p>Below we provide examples from the Versatile Voice Dataset from a High Pitch, High Resonance, Low Weight configuration to a Low Pitch, Low 
+			Resonance, High Weight Configuration, with intermediate samples provided. The L1-Distance between each configuration and the High-High-Low configuration
+			is reported.
+		</p></center>
+	</table>
+
+	<table>
+		<center><h3>High Pitch, High Resonance, Low Weight (L1-Distance = 0)</h3></center>
+		<tr>
+			<th>Sentence</th>
+			<th>001</th>
+			<th>002</th>
+			<th>003</th>
+		</tr>
+		
+		<tr>
+			<td>The blue spot is on the key again.</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/high-high-low/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/high-high-low/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/high-high-low/key.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>How hard did he hit him?</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/high-high-low/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/high-high-low/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/high-high-low/hit.wav" type="audio/wav"></audio></td>
+		</tr>
+	</table>
+
+	<table>
+		<center><h3>High Pitch, Medium Resonance, Low Weight (L1-Distance = 1)</h3></center>
+		<tr>
+			<th>Sentence</th>
+			<th>001</th>
+			<th>002</th>
+			<th>003</th>
+		</tr>
+		
+		<tr>
+			<td>The blue spot is on the key again.</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/high-med-low/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/high-med-low/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/high-med-low/key.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>How hard did he hit him?</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/high-med-low/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/high-med-low/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/high-med-low/hit.wav" type="audio/wav"></audio></td>
+		</tr>
+	</table>
+
+	<table>
+		<center><h3>Medium Pitch, Medium Resonance, Low Weight (L1-Distance = 2)</h3></center>
+		<tr>
+			<th>Sentence</th>
+			<th>001</th>
+			<th>002</th>
+			<th>003</th>
+		</tr>
+		
+		<tr>
+			<td>The blue spot is on the key again.</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/med-med-low/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/med-med-low/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/med-med-low/key.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>How hard did he hit him?</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/med-med-low/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/med-med-low/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/med-med-low/hit.wav" type="audio/wav"></audio></td>
+		</tr>
+	</table>
+
+	<table>
+		<center><h3>Medium Pitch, Medium Resonance, Medium Weight (L1-Distance = 3)</h3></center>
+		<tr>
+			<th>Sentence</th>
+			<th>001</th>
+			<th>002</th>
+			<th>003</th>
+		</tr>
+		
+		<tr>
+			<td>The blue spot is on the key again.</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/med-med-med/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/med-med-med/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/med-med-med/key.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>How hard did he hit him?</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/med-med-med/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/med-med-med/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/med-med-med/hit.wav" type="audio/wav"></audio></td>
+		</tr>
+	</table>
+
+	<table>
+		<center><h3>Low Pitch, Medium Resonance, Medium Weight (L1-Distance = 4)</h3></center>
+		<tr>
+			<th>Sentence</th>
+			<th>001</th>
+			<th>002</th>
+			<th>003</th>
+		</tr>
+		
+		<tr>
+			<td>The blue spot is on the key again.</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/low-med-med/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/low-med-med/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/low-med-med/key.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>How hard did he hit him?</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/low-med-med/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/low-med-med/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/low-med-med/hit.wav" type="audio/wav"></audio></td>
+		</tr>
+	</table>
+
+	<table>
+		<center><h3>Low Pitch, Low Resonance, Medium Weight (L1-Distance = 5)</h3></center>
+		<tr>
+			<th>Sentence</th>
+			<th>001</th>
+			<th>002</th>
+			<th>003</th>
+		</tr>
+		
+		<tr>
+			<td>The blue spot is on the key again.</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/low-low-med/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/low-low-med/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/low-low-med/key.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>How hard did he hit him?</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/low-low-med/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/low-low-med/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/low-low-med/hit.wav" type="audio/wav"></audio></td>
+		</tr>
+	</table>
+
+	<table>
+		<center><h3>Low Pitch, Low Resonance, High Weight (L1-Distance = 6)</h3></center>
+		<tr>
+			<th>Sentence</th>
+			<th>001</th>
+			<th>002</th>
+			<th>003</th>
+		</tr>
+		
+		<tr>
+			<td>The blue spot is on the key again.</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/low-low-high/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/low-low-high/key.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/low-low-high/key.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>How hard did he hit him?</td>
+			<td><audio controls><source src="./resources/audios/vvd_files/001/low-low-high/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/002/low-low-high/hit.wav" type="audio/wav"></audio></td>
+			<td><audio controls><source src="./resources/audios/vvd_files/003/low-low-high/hit.wav" type="audio/wav"></audio></td>
+		</tr>
+	</table>
+
+
+
+	<!-- This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>. -->
+<br>
+</body>
+</html>
+
